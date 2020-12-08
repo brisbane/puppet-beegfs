@@ -15,8 +15,10 @@ class beegfs::storage (
                               $package_ensure       = $beegfs::package_ensure,
   Array[String]               $interfaces           = ['eth0'],
   Stdlib::AbsolutePath        $interfaces_file      = '/etc/beegfs/interfaces.storage',
-  Stdlib::Port                $mgmtd_tcp_port       = 8008,
-  Stdlib::Port                $mgmtd_udp_port       = 8008,
+  Stdlib::Port                $mgmtd_tcp_port       = $beegfs::mgmtd_tcp_port,
+  Stdlib::Port                $mgmtd_udp_port       = $beegfs::mgmtd_udp_port,
+  Stdlib::Port                $storage_tcp_port     = $beegfs::storage_tcp_port,
+  Stdlib::Port                $storage_udp_port     = $beegfs::storage_udp_port,
   Boolean                     $enable_quota         = $beegfs::enable_quota,
 ) inherits ::beegfs {
 
