@@ -51,6 +51,7 @@ class beegfs (
   # is overriden
   class {'::beegfs::install':
     release => $release,
+    manage_repo => $manage_repo,
     user    => $user,
     group   => $group,
     log_dir => $log_dir,

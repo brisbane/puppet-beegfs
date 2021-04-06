@@ -18,12 +18,14 @@ class beegfs::repo(
         release => $release,
         require => Anchor['beegfs::repo::begin'],
         before  => Anchor['beegfs::repo::end'],
+        manage_repo => $manage_repo
       }
     }
     'RedHat': {
       class { '::beegfs::repo::redhat':
         require => Anchor['beegfs::repo::begin'],
         before  => Anchor['beegfs::repo::end'],
+        manage_repo => $manage_repo
       }
     }
     default: {
